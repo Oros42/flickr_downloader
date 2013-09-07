@@ -1,13 +1,13 @@
 # flickr downloader
 # By Oros
 # Licence Public Domaine
-import urllib2, json, os, sys
+import urllib2, json, os, sys, itertools
 for site in sys.argv[1:]:
 	d="./"+(site.split("/")[-2] if site[-1:] == "/" else site.split("/")[-1])+"/"
 	if not os.path.exists(d):
 		os.makedirs(d)
 	page=1
-	while True:
+	for p in itertools.count(1):
 		js = json.loads(urllib2.urlopen(site+"?data=1&page="+str(page)+"&append=1").read())
 		if 'endpoint' in js:
 			break
