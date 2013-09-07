@@ -16,5 +16,5 @@ for site in sys.argv[1:]:
 			img.write(urllib2.urlopen(e['sizes']['o']['url']).read())
 			img.close()
 		page+=1
-else:
+if not sys.argv[1:]:
 	sys.exit("Need url in arguments ! Like :\npython "+sys.argv[0]+" https://secure.flickr.com/photos/XXXXXXXXXXXXX/")
