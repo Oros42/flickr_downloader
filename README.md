@@ -2,7 +2,7 @@ flickr_downloader
 =================
 
 Download images from a gallery Flickr  
-  
+Compatible python 2 and 3
   
 to use  
 ```python
